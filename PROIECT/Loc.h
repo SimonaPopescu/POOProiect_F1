@@ -26,17 +26,17 @@ public:
 	{
 		this->rand = rand;
 		this->nr_loc = nr_loc;
-		ocupat = 0;
+		this->ocupat = ocupat;
 		this->zona = zona;
 	}
 
 	//Constructor de copiere
 	Loc(const Loc& L)
 	{
-		rand = L.rand;
-		nr_loc = L.nr_loc;
-		ocupat = L.ocupat;
-		zona = L.zona;
+		this->rand = L.rand;
+		this->nr_loc = L.nr_loc;
+		this->ocupat = L.ocupat;
+		this->zona = L.zona;
 	}
 
 	//Metoda Vizibilitate
@@ -61,28 +61,49 @@ public:
 			cout << "In Zona " << zona << " este pusa in scena o piesa de teatru.";
 	}
 
+	//Metoda ocupare obiect de tip loc cu parametru obiect de tip loc
+	void ocupaLoc(Loc l, int m, int n)
+	{
+		if (l.ocupat == 0)
+		{
+			l.ocupat = 1;
+			cout << "Locul a fost ocupat!";
+		}
+		else
+			cout << "Locul este deja ocupat!";
+	}
+
+	//Loc ocupaLocul(Loc l)
+	//{
+	//	Loc locNou;
+	//locNou.rand = l.rand;
+	//locNou.nr_loc = l.nr_loc;
+	//locNou.zona = l.zona;
+	//locNou.ocupat = 1;
+	//return locNou;
+	//	}
+	//
+
 	//rand-------------
 	int getRand()
 	{
-		return rand;
+		return this->rand;
 	}
 
-	void setRand(const int rrr)
+	void setRand(int rand)
 	{
-		if (rrr != 0)
-			rand = rrr;
+		this->rand = rand;
 	}
 
 	//nr_loc-------------
 	int getNr_loc()
 	{
-		return nr_loc;
+		return this->nr_loc;
 	}
 
-	void setNr_loc(const int nl)
+	void setNr_loc(int nr_loc)
 	{
-		if (nl != 0)
-			nr_loc = nl;
+		this->nr_loc = nr_loc;
 	}
 
 	//ocupat-------------
@@ -91,16 +112,16 @@ public:
 		return ocupat;
 	}
 
-	void setOcupat(const bool o)
+	//setter disponibilitate
+	void setOcupat(bool ocupat)
 	{
-		if (o)
-			ocupat = o;
+		this->ocupat = ocupat;
 	}
 
 	//zona-------------
 	tipZona getZona()
 	{
-		return zona;
+		return this->zona;
 	}
 
 	void setZona(tipZona zona)
@@ -122,43 +143,38 @@ public:
 		return *this;
 	}
 
-	//Supraincarcare =
-	Loc& operator=(const Loc& L)
-	{
-		this->rand = L.rand;
-		this->nr_loc = L.nr_loc;
-		this->ocupat = L.ocupat;
-		this->zona = zona;
-	}
+	////Supraincarcare =
+	//Loc& operator=(const Loc& L)
+	//{
+	//	this->rand = L.rand;
+	//	this->nr_loc = L.nr_loc;
+	//	this->ocupat = L.ocupat;
+	//	this->zona = zona;
+	//}
 
 	friend istream& operator>>(istream& in, Loc& L)
 	{
-		cout << "Randul este: ";
-		in >> L.rand;
-		cout << "Numarul locului este: ";
-		in >> L.nr_loc;
-		cout << "Disponibilitate: ";
-		in >> L.ocupat;
-		string z;
-		in >> z;
-		if (z == "Necunoscuta")
-			L.zona = Necunoscuta;
-		if (z == "Peluza")
-			L.zona = Peluza;
-		if (z == "Tribuna1")
-			L.zona = Tribuna1;
-		if (z == "Tribuna2")
-			L.zona = Tribuna2;
-		if (z == "Normal")
-			L.zona = Normal;
-		if (z == "VIP")
-			L.zona = VIP;
-		if (z == "Categoria1")
-			L.zona = Categoria1;
-		if (z == "Categoria2")
-			L.zona = Categoria2;
-		if (z == "Loja")
-			L.zona = Loja;
+		in >> L.rand >> L.nr_loc >> L.ocupat;
+		//citeste zona de tip enum
+		char buffer[20];
+		in >> buffer;
+		if (strcmp(buffer, "Peluza") == 0)
+			L.zona = tipZona::Peluza;
+		if (strcmp(buffer, "Tribuna1") == 0)
+			L.zona = tipZona::Tribuna1;
+		if (strcmp(buffer, "Tribuna2") == 0)
+			L.zona = tipZona::Tribuna2;
+		if (strcmp(buffer, "Normal") == 0)
+			L.zona = tipZona::Normal;
+		if (strcmp(buffer, "VIP") == 0)
+			L.zona = tipZona::VIP;
+		if (strcmp(buffer, "Categoria1") == 0)
+			L.zona = tipZona::Categoria1;
+		if (strcmp(buffer, "Categoria2") == 0)
+			L.zona = tipZona::Categoria2;
+		if (strcmp(buffer, "Loja") == 0)
+			L.zona = tipZona::Loja;
+		
 		return in;
 	}
 };
@@ -166,33 +182,6 @@ public:
 
 ostream& operator<<(ostream& out, Loc L)
 {
-	out << "Rand: " << L.getRand() << endl;
-	out << "Numar loc: " << L.getNr_loc() << endl;
-	switch (L.getZona())
-	{
-	case 0: out << "Zona: Necunoscuta" << endl;
-		break;
-	case 1: out << "Zona: Peluza" << endl;
-		break;
-	case 2: out << "Zona: Tribuna 1" << endl;
-		break;
-	case 3: out << "Zona: Tribuna 2" << endl;
-		break;
-	case 4: out << "Zona: Normal" << endl;
-		break;
-	case 5: out << "Zona: VIP" << endl;
-		break;
-	case 6: out << "Zona: Categoria 1" << endl;
-		break;
-	case 7: out << "Zona: Categoria 2" << endl;
-		break;
-	case 8: out << "Zona: Loja" << endl;
-		break;
-	}
-	out << "Disponibilitate: ";
-	if (L.getOcupat() == 0)
-		out << "Disponibil";
-	else
-		out << "Ocupat";
+	out << L.getRand() << " " << L.getNr_loc() << " " << L.getOcupat() << " " << L.getZona()  << endl;
 	return out;
 }

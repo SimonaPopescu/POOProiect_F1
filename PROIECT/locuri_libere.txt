@@ -1,0 +1,101 @@
+Rand: 1
+Numar loc: 2
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 1
+Numar loc: 3
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 1
+Numar loc: 4
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 1
+Numar loc: 5
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ 
+Rand: 2
+Numar loc: 1
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 2
+Numar loc: 2
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 2
+Numar loc: 3
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 2
+Numar loc: 4
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 2
+Numar loc: 5
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ 
+Rand: 3
+Numar loc: 1
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 3
+Numar loc: 2
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 3
+Numar loc: 3
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 3
+Numar loc: 4
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 3
+Numar loc: 5
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ 
+Rand: 4
+Numar loc: 1
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 4
+Numar loc: 2
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 4
+Numar loc: 3
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 4
+Numar loc: 4
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 4
+Numar loc: 5
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ 
+Rand: 5
+Numar loc: 1
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 5
+Numar loc: 2
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 5
+Numar loc: 3
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 5
+Numar loc: 4
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ Rand: 5
+Numar loc: 5
+Zona: Necunoscuta
+Disponibilitate: Disponibil
+ 

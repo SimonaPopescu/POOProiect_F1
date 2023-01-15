@@ -89,12 +89,12 @@ public:
 			tipLocatie = l;
 	}
 
-	Locatie& operator=(const Locatie& L)
+	/*Locatie& operator=(const Locatie& L)
 	{
 		this->nr_randuri = L.nr_randuri;
 		this->nr_locuri_rand = L.nr_locuri_rand;
 		this->tipLocatie = L.tipLocatie;
-	}
+	}*/
 
 	//Supraincarcare +
 	Locatie operator+()

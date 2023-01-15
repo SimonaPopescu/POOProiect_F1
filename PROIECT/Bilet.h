@@ -156,7 +156,7 @@ ostream& operator<<(ostream& out, Bilet B)
 {
 	out << "ID-ul biletului este: " << B.getId_bilet() << endl;
 	out << "Pretul biletului este: " << B.getPret() << endl;
-	out << "Numarul randului: " << B.getLoc_bilet().getRand() << endl;
+	/*out << "Numarul randului: " << B.getLoc_bilet().getRand() << endl;*/
 	out << "Numarul locului: " << B.getLoc_bilet().getNr_loc() << endl;
 	out << "Zona este: " << B.getLoc_bilet().getZona() << endl;
 	out << "Zona este: " << B.getLoc_bilet().getZona() << endl;

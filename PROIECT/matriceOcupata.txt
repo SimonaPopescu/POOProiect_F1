@@ -1,0 +1,99 @@
+Rand: 1
+Numar loc: 1
+Zona: Necunoscuta
+Disponibilitate: Ocupat
+ 
+
+
+
+
+Rand: 1
+Numar loc: 2
+Zona: Necunoscuta
+Disponibilitate: Ocupat
+ 
+
+
+
+
+Rand: 1
+Numar loc: 2
+Zona: Necunoscuta
+Disponibilitate: Ocupat
+ 
+
+
+
+
+Rand: 1
+Numar loc: 2
+Zona: Necunoscuta
+Disponibilitate: Ocupat
+ 
+
+
+
+
+Rand: 1
+Numar loc: 2
+Zona: Necunoscuta
+Disponibilitate: Ocupat
+ 
+
+
+
+
+Rand: 1
+Numar loc: 3
+Zona: Necunoscuta
+Disponibilitate: Ocupat
+ 
+
+
+
+
+Rand: 1
+Numar loc: 4
+Zona: Necunoscuta
+Disponibilitate: Ocupat
+ 
+
+
+
+
+Rand: 1
+Numar loc: 5
+Zona: Necunoscuta
+Disponibilitate: Ocupat
+ 
+
+
+
+
+Rand: 1
+Numar loc: 1
+Zona: Necunoscuta
+Disponibilitate: Ocupat
+ 
+
+
+
+
+Rand: 1
+Numar loc: 2
+Zona: Necunoscuta
+Disponibilitate: Ocupat
+ 
+
+
+
+
+Rand: 1
+Numar loc: 2
+Zona: Necunoscuta
+Disponibilitate: Ocupat
+ 
+
+
+
+

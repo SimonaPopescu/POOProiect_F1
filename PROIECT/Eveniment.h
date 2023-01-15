@@ -28,7 +28,7 @@ public:
 		ora = "Necunoscuta";
 	}
 
-	Eveniment(char* adresa, char* nume_eveniment, string data, string ora, Locatie locatie, Loc** locuri_o)
+	Eveniment(const char* adresa, const char* nume_eveniment, string data, string ora, Locatie locatie)
 	{
 		this->adresa = new char[strlen(adresa) + 1];
 		strcpy_s(this->adresa, strlen(adresa) + 1, adresa);
@@ -37,7 +37,10 @@ public:
 		this->data = data;
 		this->ora = ora;
 		this->locatie = locatie;
-		Loc** locuri_ocupate = new Loc * [locatie.getNr_randuri() * locatie.getNr_locuri_rand()];
+		Loc** locuri_ocupate = new Loc * [locatie.getNr_randuri()];
+		for (int i = 0; i < locatie.getNr_randuri(); i++)
+			locuri_ocupate[i] = new Loc[locatie.getNr_locuri_rand()];
+
 		for (int i = 0; i < locatie.getNr_randuri(); i++)
 		{
 			for (int j = 0; j < locatie.getNr_locuri_rand(); j++)
@@ -338,6 +341,14 @@ public:
 		locatie = l;
 	}
 
+	//Loc
+
+	Loc** getLocuri_ocupate()
+	{
+		return locuri_ocupate;
+	}
+
+
 	//agentie------------------
 	static string getAgentie()
 	{
@@ -455,6 +466,7 @@ public:
 
 };
 
+
 ostream& operator<<(ostream& out, Eveniment E)
 {
 	out << "Adresa: " << E.getAdresa() << endl;
@@ -466,4 +478,85 @@ ostream& operator<<(ostream& out, Eveniment E)
 	return out;
 }
 
+
 string Eveniment::agentie = "iabilet.ro";
+
+class EvenimentCaritabil : public Eveniment
+{
+private:
+	int donatie_minima;
+	string cauza_sprijinita;
+
+public:
+	EvenimentCaritabil() : Eveniment()
+	{
+		donatie_minima = 0;
+		cauza_sprijinita = "Necunoscuta";
+	}
+
+	EvenimentCaritabil(char* adresa, char* nume_eveniment, string data, string ora, Locatie locatie, int donatie_minima, string cauza_sprijinita) : Eveniment(adresa, nume_eveniment, data, ora, locatie)
+	{
+		this->donatie_minima = donatie_minima;
+		this->cauza_sprijinita = cauza_sprijinita;
+	}
+
+	EvenimentCaritabil(const EvenimentCaritabil& ev) : Eveniment(ev)
+	{
+		this->donatie_minima = ev.donatie_minima;
+		this->cauza_sprijinita = ev.cauza_sprijinita;
+	}
+};
+
+//creeaza o clasa virtuala pura cu metode virtuale pure
+class VirtualEvenimentCultural
+{
+public:
+	virtual int nr_distributii() = 0;
+	virtual string* actori() = 0;
+	virtual string* distributii();
+	virtual string autorPiesa();
+};
+
+string* VirtualEvenimentCultural::distributii()
+{
+	return nullptr;
+}
+
+string VirtualEvenimentCultural::autorPiesa()
+{
+	return "Necunoscut";
+}
+
+
+class FestivalTeatru : public VirtualEvenimentCultural
+{
+public:
+	int nr_distributii()
+	{
+		return 2;
+	}
+	string *actori()
+	{
+		string* actori = new string[6];
+		actori[0] = "Rodica Popescu";
+		actori[1] = "Liviu Lucaci";
+		actori[2] = "Dragos Stemate";
+		actori[3] = "Marius Rizea";
+		actori[4] = "Cristina Bucur";
+		actori[5] = "Daniel Palade";
+		actori[6] = "Iuliana Moise";
+		return actori;
+	}
+	string* distributii()
+	{
+		string* distributii = new string[2];
+		distributii[0] = "Distributia 1";
+		distributii[1] = "Distributia 2";
+		return distributii;
+	}
+
+	string autorPiesa()
+	{
+		return "Iulia Sirbu";
+	}
+};
